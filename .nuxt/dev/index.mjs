@@ -933,9 +933,6 @@ const _inlineRuntimeConfig = {
       "/__nuxt_error": {
         "cache": false
       },
-      "/": {
-        "prerender": true
-      },
       "/_fonts/**": {
         "headers": {
           "cache-control": "public, max-age=31536000, immutable"
@@ -953,9 +950,6 @@ const _inlineRuntimeConfig = {
         "headers": {
           "cache-control": "public, max-age=1, immutable"
         }
-      },
-      "//_payload.json": {
-        "prerender": true
       }
     }
   },
