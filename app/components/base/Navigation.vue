@@ -1,93 +1,52 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui'
+import type { NavigationMenuItem } from '@nuxt/ui';
+import { computed } from 'vue';
+// import { useColorMode } from '#imports'; // This import works in Nuxt 3/4 setup scripts
 
-const items: NavigationMenuItem[][] = [[{
-  label: 'Home',
-  icon: 'i-lucide-house',
-  active: true
+// const colorMode = useColorMode();
+
+const items = computed<NavigationMenuItem[]>(() => [{
+  label: 'Main',
+  to: '/dashboard',
+  // icon: 'i-lucide-book-open',
 }, {
-  label: 'Inbox',
-  icon: 'i-lucide-inbox',
-  badge: '4'
+  label: 'Invoice',
+  to: '/dashboard/invoice',
+  // icon: 'mdi-light:account',
 }, {
-  label: 'Contacts',
-  icon: 'i-lucide-users'
+  label: 'Mind',
+  // icon: 'i-simple-icons-figma',
+  to: '/dashboard/mind',
 }, {
-  label: 'Settings',
-  icon: 'i-lucide-settings',
-  defaultOpen: true,
-  children: [{
-    label: 'General'
-  }, {
-    label: 'Members'
-  }, {
-    label: 'Notifications'
-  }]
-}], [{
-  label: 'Feedback',
-  icon: 'i-lucide-message-circle',
-  to: 'https://github.com/nuxt-ui-templates/dashboard',
-  target: '_blank'
+  label: 'Spirit',
+  // icon: 'i-lucide-rocket',
+  to: '/dashboard/spirit',
 }, {
-  label: 'Help & Support',
-  icon: 'i-lucide-info',
-  to: 'https://github.com/nuxt/ui',
-  target: '_blank'
-}]]
+  label: 'Profile',
+  // icon: 'i-lucide-rocket',
+  to: '/dashboard/profile',
+}])
 </script>
 
 <template>
-  <UDashboardSidebar collapsible resizable :ui="{ footer: 'border-t border-default' }">
-    <template #header="{ collapsed }">
-      <span v-if="!collapsed">Hello There</span>
-      <!-- <Logo v-if="!collapsed" class="h-5 w-auto shrink-0" /> -->
-      <UIcon name="i-simple-icons-nuxtdotjs" class="size-5 text-primary mx-auto" />
+  <UHeader mode="slideover" class="border-none">
+    <template #title>
+      <!-- Logo/Brand Name -->
+      <NuxtLink to="/" class="flex items-center text-2xl font-extrabold h-10">
+        <span class="text-2xl font-bold">
+          IRONCLAD
+        </span>
+        <!-- <NuxtImg v-if="colorMode.value !== 'light'"
+          class="h-25 w-25 opacity-60 -left-14.5 relative rounded-full object-cover lg:hidden" alt="White Raven Logo"
+          format="webp" width="200px" height="200px" src="/images/logo_transparent_512x512.png" loading="lazy"
+          fetch-priority="low" /> -->
+      </NuxtLink>
     </template>
 
-    <template #default="{ collapsed }">
-      <UButton
-        :label="collapsed ? undefined : 'Search...'"
-        icon="i-lucide-search"
-        color="neutral"
-        variant="outline"
-        block
-        :square="collapsed"
-      >
-        <template v-if="!collapsed" #trailing>
-          <div class="flex items-center gap-0.5 ms-auto">
-            <UKbd value="meta" variant="subtle" />
-            <UKbd value="K" variant="subtle" />
-          </div>
-        </template>
-      </UButton>
+    <UNavigationMenu color="neutral" :items="items" />
 
-      <UNavigationMenu
-        :collapsed="collapsed"
-        :items="items[0]"
-        orientation="vertical"
-      />
-
-      <UNavigationMenu
-        :collapsed="collapsed"
-        :items="items[1]"
-        orientation="vertical"
-        class="mt-auto"
-      />
+    <template #body>
+      <UNavigationMenu color="neutral" :items="items" orientation="vertical" class="-mx-2.5" />
     </template>
-
-    <template #footer="{ collapsed }">
-      <UButton
-        :avatar="{
-          src: 'https://github.com/benjamincanac.png',
-          loading: 'lazy' as const
-        }"
-        :label="collapsed ? undefined : 'Benjamin'"
-        color="neutral"
-        variant="ghost"
-        class="w-full"
-        :block="collapsed"
-      />
-    </template>
-  </UDashboardSidebar>
+  </UHeader>
 </template>
-

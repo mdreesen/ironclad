@@ -1,5 +1,5 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getResponseStatus, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getRouterParam, getResponseStatusText } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getResponseStatus, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler as lazyEventHandler$1, getRouterParam, getResponseStatusText } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
@@ -37,6 +37,9 @@ import { renderToString } from 'file:///Users/mdreesen/Documents/Programming/bus
 import { walkResolver } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/unhead/dist/utils.mjs';
 import { getIcons } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/@iconify/utils/lib/index.js';
 import { collections } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/.nuxt/nuxt-icon-server-bundle.mjs';
+import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/.pnpm/ipx@3.1.1_db0@0.3.4_ioredis@5.10.1_srvx@0.11.15/node_modules/ipx/dist/index.mjs';
+import { lazyEventHandler, useBase } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/.pnpm/h3@1.15.11/node_modules/h3/dist/index.mjs';
+import { isAbsolute } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/.pnpm/pathe@2.0.3/node_modules/pathe/dist/index.mjs';
 
 const serverAssets = [{"baseName":"server","dir":"/Users/mdreesen/Documents/Programming/business-projects/ironclad/server/assets"}];
 
@@ -956,6 +959,18 @@ const _inlineRuntimeConfig = {
   "public": {},
   "icon": {
     "serverKnownCssClasses": []
+  },
+  "ipx": {
+    "baseURL": "/_ipx",
+    "alias": {},
+    "fs": {
+      "dir": [
+        "/Users/mdreesen/Documents/Programming/business-projects/ironclad/public"
+      ]
+    },
+    "http": {
+      "domains": []
+    }
   }
 };
 const envOptions = {
@@ -3380,6 +3395,24 @@ const _oECbNd = defineCachedEventHandler(async (event) => {
   // 1 week
 });
 
+const _46CguH = lazyEventHandler(() => {
+  const opts = useRuntimeConfig().ipx || {};
+  const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
+  const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
+  const httpStorage = opts.http?.domains ? ipxHttpStorage({ ...opts.http }) : void 0;
+  if (!fsStorage && !httpStorage) {
+    throw new Error("IPX storage is not configured!");
+  }
+  const ipxOptions = {
+    ...opts,
+    storage: fsStorage || httpStorage,
+    httpStorage
+  };
+  const ipx = createIPX(ipxOptions);
+  const ipxHandler = createIPXH3Handler(ipx);
+  return useBase(opts.baseURL, ipxHandler);
+});
+
 const _lazy__MX71i = () => Promise.resolve().then(function () { return renderer; });
 
 const handlers = [
@@ -3387,6 +3420,7 @@ const handlers = [
   { route: '/__nuxt_error', handler: _lazy__MX71i, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
   { route: '/api/_nuxt_icon/:collection', handler: _oECbNd, lazy: false, middleware: false, method: undefined },
+  { route: '/_ipx/**', handler: _46CguH, lazy: false, middleware: false, method: undefined },
   { route: '/_fonts/**', handler: _lazy__MX71i, lazy: true, middleware: false, method: undefined },
   { route: '/**', handler: _lazy__MX71i, lazy: true, middleware: false, method: undefined }
 ];
@@ -3485,7 +3519,7 @@ function createNitroApp() {
   globalThis.$fetch = $fetch;
   h3App.use(createRouteRulesHandler({ localFetch }));
   for (const h of handlers) {
-    let handler = h.lazy ? lazyEventHandler(h.handler) : h.handler;
+    let handler = h.lazy ? lazyEventHandler$1(h.handler) : h.handler;
     if (h.middleware || !h.route) {
       const middlewareBase = (config.app.baseURL + (h.route || "/")).replace(
         /\/+/g,
