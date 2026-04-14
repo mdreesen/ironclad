@@ -121,7 +121,7 @@ declare global {
   const useAppConfig: typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/utils/app-config').useAppConfig
   const useBase: typeof import('../../node_modules/h3').useBase
   const useEvent: typeof import('../../node_modules/nitropack/dist/runtime/internal/context').useEvent
-  const useImage: typeof import('../../node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_ioredis@5.10.1_magicast@0.5.2_srvx@0.11.15/node_modules/@nuxt/image/dist/runtime/server/utils/image').useImage
+  const useImage: typeof import('../../node_modules/@nuxt/image/dist/runtime/server/utils/image').useImage
   const useNitroApp: typeof import('../../node_modules/nitropack/dist/runtime/internal/app').useNitroApp
   const useRuntimeConfig: typeof import('../../node_modules/nitropack/dist/runtime/internal/config').useRuntimeConfig
   const useSession: typeof import('../../node_modules/h3').useSession
@@ -149,4 +149,4 @@ export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error/utils'
 export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '/Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths';
 export { defineAppConfig } from '/Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/@nuxt/nitro-server/dist/runtime/utils/config';
 export { useAppConfig } from '/Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/@nuxt/nitro-server/dist/runtime/utils/app-config';
-export { useImage } from '/Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_ioredis@5.10.1_magicast@0.5.2_srvx@0.11.15/node_modules/@nuxt/image/dist/runtime/server/utils/image';
+export { useImage } from '/Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/@nuxt/image/dist/runtime/server/utils/image';

@@ -1,6 +1,6 @@
 <script setup lang="ts">
     const props = defineProps({
-        text: {
+        label: {
             type: String,
             required: true
         }
@@ -8,5 +8,5 @@
 </script>
 
 <template>
-    <h2 class="font-sans text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-purple-400 to-blue-400 flex justify-center mb-2" v-html="text"></h2>
+    <h2 class="font-sans text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-purple-400 to-blue-400 flex justify-center mb-2" v-html="label"></h2>
 </template>

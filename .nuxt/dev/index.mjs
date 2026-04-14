@@ -1,5 +1,5 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getResponseStatus, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler as lazyEventHandler$1, getRouterParam, getResponseStatusText } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getResponseStatus, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, getResponseStatusText } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
@@ -31,15 +31,13 @@ import { isVNode, isRef, toValue } from 'file:///Users/mdreesen/Documents/Progra
 import _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/@nuxt/vite-builder/dist/fix-stacktrace.mjs';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$1, basename } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/pathe/dist/index.mjs';
+import { dirname as dirname$1, resolve as resolve$1, basename, isAbsolute } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/pathe/dist/index.mjs';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/unhead/dist/server.mjs';
 import { renderToString } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/vue/server-renderer/index.mjs';
 import { walkResolver } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/unhead/dist/utils.mjs';
 import { getIcons } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/@iconify/utils/lib/index.js';
 import { collections } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/.nuxt/nuxt-icon-server-bundle.mjs';
-import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/.pnpm/ipx@3.1.1_db0@0.3.4_ioredis@5.10.1_srvx@0.11.15/node_modules/ipx/dist/index.mjs';
-import { lazyEventHandler, useBase } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/.pnpm/h3@1.15.11/node_modules/h3/dist/index.mjs';
-import { isAbsolute } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/.pnpm/pathe@2.0.3/node_modules/pathe/dist/index.mjs';
+import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/ipx/dist/index.mjs';
 
 const serverAssets = [{"baseName":"server","dir":"/Users/mdreesen/Documents/Programming/business-projects/ironclad/server/assets"}];
 
@@ -3395,7 +3393,7 @@ const _oECbNd = defineCachedEventHandler(async (event) => {
   // 1 week
 });
 
-const _46CguH = lazyEventHandler(() => {
+const _GJ41_5 = lazyEventHandler(() => {
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
   const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
@@ -3420,7 +3418,7 @@ const handlers = [
   { route: '/__nuxt_error', handler: _lazy__MX71i, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
   { route: '/api/_nuxt_icon/:collection', handler: _oECbNd, lazy: false, middleware: false, method: undefined },
-  { route: '/_ipx/**', handler: _46CguH, lazy: false, middleware: false, method: undefined },
+  { route: '/_ipx/**', handler: _GJ41_5, lazy: false, middleware: false, method: undefined },
   { route: '/_fonts/**', handler: _lazy__MX71i, lazy: true, middleware: false, method: undefined },
   { route: '/**', handler: _lazy__MX71i, lazy: true, middleware: false, method: undefined }
 ];
@@ -3519,7 +3517,7 @@ function createNitroApp() {
   globalThis.$fetch = $fetch;
   h3App.use(createRouteRulesHandler({ localFetch }));
   for (const h of handlers) {
-    let handler = h.lazy ? lazyEventHandler$1(h.handler) : h.handler;
+    let handler = h.lazy ? lazyEventHandler(h.handler) : h.handler;
     if (h.middleware || !h.route) {
       const middlewareBase = (config.app.baseURL + (h.route || "/")).replace(
         /\/+/g,

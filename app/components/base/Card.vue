@@ -4,7 +4,7 @@ const props = defineProps({
         type: String,
         required: true
     },
-    text: {
+    description: {
         type: String,
         default: ''
     }
@@ -17,6 +17,6 @@ const props = defineProps({
             {{ label }}
         </template>
 
-        {{ text }}
+        {{ description }}
     </UCard>
 </template>

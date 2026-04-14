@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-    layout: 'authenticated',
+  layout: 'authenticated',
 });
 
 import { leads, table } from '~/utils/test';
@@ -8,23 +8,30 @@ import { leads, table } from '~/utils/test';
 
 <template>
   <div class="font-sans">
-    
+
     <header class="flex justify-between items-center mb-12 pb-8 border-b">
       <div>
-        <span class="font-medium text-xs uppercase tracking-widest">Site Intake</span>
-        <baseHeader label="Lead Manager" />
+        <span class="font-medium text-xs uppercase tracking-widest">Company Name</span>
+        <baseHeaderSection label="First Name" />
       </div>
       <div class="flex gap-4">
         <baseButton label="New Entry" />
       </div>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-      <div v-for="label in ['Open Inquiries', 'Visits Scheduled', 'Active Estimates']" :key="label" class="rounded-sm shadow-sm transition-colors">
-        <baseCard :label="label" text="12" />
+    <section>
+      <baseHeaderSection label="Overview" />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div v-for="label in ['Open Inquiries', 'Visits Scheduled', 'Active Estimates']" :key="label"
+          class="rounded-sm shadow-sm transition-colors">
+          <baseCard :label="label" description="12" />
+        </div>
       </div>
-    </div>
+    </section>
 
-    <baseTable :data="table" />
+    <section>
+      <baseHeaderSection label="Clients" />
+      <baseTable :data="table" />
+    </section>
   </div>
 </template>

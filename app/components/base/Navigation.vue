@@ -10,8 +10,8 @@ const items = computed<NavigationMenuItem[]>(() => [{
   to: '/dashboard',
   // icon: 'i-lucide-book-open',
 }, {
-  label: 'Invoice',
-  to: '/dashboard/invoice',
+  label: 'Invoices',
+  to: '/dashboard/invoices',
   // icon: 'mdi-light:account',
 }, {
   label: 'Mind',

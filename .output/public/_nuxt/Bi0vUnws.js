@@ -1,0 +1,1 @@
+import{d as o,B as a,l as s,c as n,Q as r,o as l}from"./CpMxR9DL.js";const p=o({__name:"default",setup(c){const e=a();return s({meta:[{property:"og:title",content:`Ascend - ${e.meta.title}`}]}),(t,u)=>(l(),n("div",null,[r(t.$slots,"default")]))}});export{p as default};
