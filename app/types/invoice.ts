@@ -1,5 +1,7 @@
 export type Invoice = {
-    description: string;
-    qty: number; 
-    rate: number;
+    id: string;
+    date: string;
+    status: 'paid' | 'failed' | 'refunded'
+    email: string;
+    amount: number;
 }

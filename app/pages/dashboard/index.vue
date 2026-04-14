@@ -12,7 +12,7 @@ import { leads, table } from '~/utils/test';
     <header class="flex justify-between items-center mb-12 pb-8 border-b">
       <div>
         <span class="font-medium text-xs uppercase tracking-widest">Company Name</span>
-        <baseHeaderSection label="First Name" />
+        <baseHeader label="First Name" />
       </div>
       <div class="flex gap-4">
         <baseButton label="New Entry" />
@@ -20,7 +20,7 @@ import { leads, table } from '~/utils/test';
     </header>
 
     <section>
-      <baseHeaderSection label="Overview" />
+      <baseHeaderSection label="OVERVIEW" />
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div v-for="label in ['Open Inquiries', 'Visits Scheduled', 'Active Estimates']" :key="label"
           class="rounded-sm shadow-sm transition-colors">
@@ -30,7 +30,7 @@ import { leads, table } from '~/utils/test';
     </section>
 
     <section>
-      <baseHeaderSection label="Clients" />
+      <baseHeaderSection label="CLIENTS & LEADS" />
       <baseTable :data="table" />
     </section>
   </div>

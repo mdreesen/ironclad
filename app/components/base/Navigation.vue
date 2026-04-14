@@ -14,17 +14,9 @@ const items = computed<NavigationMenuItem[]>(() => [{
   to: '/dashboard/invoices',
   // icon: 'mdi-light:account',
 }, {
-  label: 'Mind',
+  label: 'Team',
   // icon: 'i-simple-icons-figma',
-  to: '/dashboard/mind',
-}, {
-  label: 'Spirit',
-  // icon: 'i-lucide-rocket',
-  to: '/dashboard/spirit',
-}, {
-  label: 'Profile',
-  // icon: 'i-lucide-rocket',
-  to: '/dashboard/profile',
+  to: '/dashboard/team',
 }])
 </script>
 
@@ -33,13 +25,13 @@ const items = computed<NavigationMenuItem[]>(() => [{
     <template #title>
       <!-- Logo/Brand Name -->
       <NuxtLink to="/" class="flex items-center text-2xl font-extrabold h-10">
-        <span class="text-2xl font-bold">
+        <!-- <span class="text-2xl font-bold">
           IRONCLAD
-        </span>
-        <!-- <NuxtImg v-if="colorMode.value !== 'light'"
-          class="h-25 w-25 opacity-60 -left-14.5 relative rounded-full object-cover lg:hidden" alt="White Raven Logo"
-          format="webp" width="200px" height="200px" src="/images/logo_transparent_512x512.png" loading="lazy"
-          fetch-priority="low" /> -->
+        </span> -->
+        <NuxtImg
+          class="h-10 w-10 relative rounded-full object-cover" alt="White Raven Logo"
+          format="webp" width="200px" height="200px" src="/images/logo.webp" loading="lazy"
+          fetch-priority="low" />
       </NuxtLink>
     </template>
 

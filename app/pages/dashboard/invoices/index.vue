@@ -35,7 +35,7 @@ const outstanding = computed(() =>
       <div class="flex justify-between items-end mb-12">
         <div>
           <span class="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 block mb-2">Financial Records</span>
-          <h1 class="text-5xl font-black uppercase italic tracking-tighter">Ironclad <span class="text-zinc-200 text-normal">Ledger.</span></h1>
+          <baseHeader label="INVOICES" />
         </div>
         <baseLink label="Create Invoice" path="/dashboard/invoices/create" />
       </div>

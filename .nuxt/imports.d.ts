@@ -34,6 +34,7 @@ export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
 export { downloadExcel } from '../app/utils/export';
 export { getStatusClasses } from '../app/utils/helpers';
 export { leads, table } from '../app/utils/test';
+export { formVarient, containerVarient, itemVarient, inputVarient, navVarient, navMenuVarient } from '../app/utils/varients';
 export { defineLocale, extendLocale } from '../node_modules/@nuxt/ui/dist/runtime/composables/defineLocale';
 export { defineShortcuts, extractShortcuts } from '../node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts';
 export { useContentSearch } from '../node_modules/@nuxt/ui/dist/runtime/composables/useContentSearch';

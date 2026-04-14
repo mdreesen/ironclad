@@ -39,10 +39,10 @@ const printInvoice = () => window.print();
           <input type="color" v-model="settings.accentColor" class="w-full h-10 border border-zinc-200 p-1 rounded-sm cursor-pointer" />
         </div>
 
-        <div class="flex items-center justify-between">
+        <!-- <div class="flex items-center justify-between">
           <label class="text-[10px] font-bold uppercase text-zinc-500">Display Logo</label>
           <input type="checkbox" v-model="settings.showLogo" class="accent-zinc-950" />
-        </div>
+        </div> -->
 
         <div>
           <label class="text-[10px] font-bold uppercase text-zinc-500 block mb-2">Legal Terms</label>
@@ -59,10 +59,10 @@ const printInvoice = () => window.print();
       <div class="max-w-4xl mx-auto bg-white shadow-2xl print:shadow-none p-12 md:p-16 rounded-sm min-h-264 flex flex-col">
         
         <header class="flex justify-between items-start mb-20">
-          <div v-if="settings.showLogo" class="w-16 h-16 bg-zinc-900 flex items-center justify-center rounded-sm" :style="{ backgroundColor: settings.accentColor }">
+          <!-- <div v-if="settings.showLogo" class="w-16 h-16 bg-zinc-900 flex items-center justify-center rounded-sm" :style="{ backgroundColor: settings.accentColor }">
             <span class="text-white font-black italic text-2xl">HB</span>
-          </div>
-          <div v-else class="h-16"></div>
+          </div> -->
+          <div class="h-16"></div>
 
           <div class="text-right">
             <h2 class="text-xl font-black uppercase italic tracking-tight" :style="{ color: settings.accentColor }">

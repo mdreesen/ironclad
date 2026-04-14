@@ -8,8 +8,10 @@ useHead({
 </script>
 
 <template>
-    <main class="p-8 min-h-screen">
+    <div>
         <baseNavigation />
-        <slot />
-    </main>
+        <main class="p-8 min-h-screen">
+            <slot />
+        </main>
+    </div>
 </template>

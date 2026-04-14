@@ -17,9 +17,11 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 export const AppInvoice: typeof import("../app/components/app/Invoice.vue")['default']
 export const BaseButton: typeof import("../app/components/base/Button.vue")['default']
 export const BaseCard: typeof import("../app/components/base/Card.vue")['default']
+export const BaseCardTeam: typeof import("../app/components/base/CardTeam.vue")['default']
 export const BaseHeader: typeof import("../app/components/base/Header.vue")['default']
 export const BaseHeaderSection: typeof import("../app/components/base/HeaderSection.vue")['default']
 export const BaseLink: typeof import("../app/components/base/Link.vue")['default']
+export const BaseMessage: typeof import("../app/components/base/Message.vue")['default']
 export const BaseNavigation: typeof import("../app/components/base/Navigation.vue")['default']
 export const BaseTable: typeof import("../app/components/base/Table.vue")['default']
 export const UColorModeAvatar: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']
@@ -185,9 +187,11 @@ export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components
 export const LazyAppInvoice: LazyComponent<typeof import("../app/components/app/Invoice.vue")['default']>
 export const LazyBaseButton: LazyComponent<typeof import("../app/components/base/Button.vue")['default']>
 export const LazyBaseCard: LazyComponent<typeof import("../app/components/base/Card.vue")['default']>
+export const LazyBaseCardTeam: LazyComponent<typeof import("../app/components/base/CardTeam.vue")['default']>
 export const LazyBaseHeader: LazyComponent<typeof import("../app/components/base/Header.vue")['default']>
 export const LazyBaseHeaderSection: LazyComponent<typeof import("../app/components/base/HeaderSection.vue")['default']>
 export const LazyBaseLink: LazyComponent<typeof import("../app/components/base/Link.vue")['default']>
+export const LazyBaseMessage: LazyComponent<typeof import("../app/components/base/Message.vue")['default']>
 export const LazyBaseNavigation: LazyComponent<typeof import("../app/components/base/Navigation.vue")['default']>
 export const LazyBaseTable: LazyComponent<typeof import("../app/components/base/Table.vue")['default']>
 export const LazyUColorModeAvatar: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']>

@@ -17,9 +17,11 @@ interface _GlobalComponents {
   AppInvoice: typeof import("../../app/components/app/Invoice.vue")['default']
   BaseButton: typeof import("../../app/components/base/Button.vue")['default']
   BaseCard: typeof import("../../app/components/base/Card.vue")['default']
+  BaseCardTeam: typeof import("../../app/components/base/CardTeam.vue")['default']
   BaseHeader: typeof import("../../app/components/base/Header.vue")['default']
   BaseHeaderSection: typeof import("../../app/components/base/HeaderSection.vue")['default']
   BaseLink: typeof import("../../app/components/base/Link.vue")['default']
+  BaseMessage: typeof import("../../app/components/base/Message.vue")['default']
   BaseNavigation: typeof import("../../app/components/base/Navigation.vue")['default']
   BaseTable: typeof import("../../app/components/base/Table.vue")['default']
   UColorModeAvatar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']
@@ -185,9 +187,11 @@ interface _GlobalComponents {
   LazyAppInvoice: LazyComponent<typeof import("../../app/components/app/Invoice.vue")['default']>
   LazyBaseButton: LazyComponent<typeof import("../../app/components/base/Button.vue")['default']>
   LazyBaseCard: LazyComponent<typeof import("../../app/components/base/Card.vue")['default']>
+  LazyBaseCardTeam: LazyComponent<typeof import("../../app/components/base/CardTeam.vue")['default']>
   LazyBaseHeader: LazyComponent<typeof import("../../app/components/base/Header.vue")['default']>
   LazyBaseHeaderSection: LazyComponent<typeof import("../../app/components/base/HeaderSection.vue")['default']>
   LazyBaseLink: LazyComponent<typeof import("../../app/components/base/Link.vue")['default']>
+  LazyBaseMessage: LazyComponent<typeof import("../../app/components/base/Message.vue")['default']>
   LazyBaseNavigation: LazyComponent<typeof import("../../app/components/base/Navigation.vue")['default']>
   LazyBaseTable: LazyComponent<typeof import("../../app/components/base/Table.vue")['default']>
   LazyUColorModeAvatar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']>
