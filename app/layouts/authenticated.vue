@@ -8,8 +8,10 @@ useHead({
 </script>
 
 <template>
-    <baseNavigation />
-    <main>
-        <slot />
-    </main>
+    <div class="flex w-full">
+        <baseNavigation />
+        <main class="w-full">
+            <slot />
+        </main>
+    </div>
 </template>
