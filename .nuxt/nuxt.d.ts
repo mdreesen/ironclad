@@ -1,6 +1,6 @@
 /// <reference types="@nuxt/eslint" />
-/// <reference types="@nuxt/ui" />
 /// <reference types="@vite-pwa/nuxt" />
+/// <reference types="@nuxt/ui" />
 /// <reference types="@nuxt/image" />
 /// <reference types="nuxt-charts" />
 /// <reference types="@nuxt/devtools" />

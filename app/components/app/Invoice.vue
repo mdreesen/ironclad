@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import type { Invoice } from '~/types/invoice';
+import type { CreateInvoice } from '~/types/invoice';
 // 1. Reactive State for Customization
 const settings = ref({
   companyName: 'Company',
@@ -17,7 +17,7 @@ const referenceNumber = computed(() => Math.floor(Date.now() / 100000));
 const subtotal = computed(() => lineItems.value.reduce((acc, item) => acc + (item.qty * item.rate), 0));
 
 // 2. Methods
-const addItem = () => lineItems.value.push({ description: '', qty: 1, rate: 0 });
+const addItem = () => lineItems?.value.push({ description: '', qty: 1, rate: 0 });
 const removeItem = (index: number) => lineItems.value.splice(index, 1);
 const printInvoice = () => window.print();
 </script>
