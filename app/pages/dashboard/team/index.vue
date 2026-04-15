@@ -85,14 +85,14 @@ const team = ref([
             </div>
           </div> -->
 
-          <div class="flex gap-4 border-t border-zinc-100 pt-6">
+          <!-- <div class="flex gap-4 border-t border-zinc-100 pt-6">
             <button class="flex-1 text-[10px] font-black uppercase tracking-widest py-3 border border-zinc-200 hover:bg-zinc-950 hover:text-white transition-all">
               Profile
             </button>
             <button class="flex-1 text-[10px] font-black uppercase tracking-widest py-3 border border-zinc-200 hover:bg-zinc-950 hover:text-white transition-all">
               Message
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

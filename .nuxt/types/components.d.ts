@@ -20,6 +20,7 @@ interface _GlobalComponents {
   BaseCardTeam: typeof import("../../app/components/base/CardTeam.vue")['default']
   BaseHeader: typeof import("../../app/components/base/Header.vue")['default']
   BaseHeaderSection: typeof import("../../app/components/base/HeaderSection.vue")['default']
+  BaseIcon: typeof import("../../app/components/base/Icon.vue")['default']
   BaseLink: typeof import("../../app/components/base/Link.vue")['default']
   BaseMessage: typeof import("../../app/components/base/Message.vue")['default']
   BaseNavigation: typeof import("../../app/components/base/Navigation.vue")['default']
@@ -190,6 +191,7 @@ interface _GlobalComponents {
   LazyBaseCardTeam: LazyComponent<typeof import("../../app/components/base/CardTeam.vue")['default']>
   LazyBaseHeader: LazyComponent<typeof import("../../app/components/base/Header.vue")['default']>
   LazyBaseHeaderSection: LazyComponent<typeof import("../../app/components/base/HeaderSection.vue")['default']>
+  LazyBaseIcon: LazyComponent<typeof import("../../app/components/base/Icon.vue")['default']>
   LazyBaseLink: LazyComponent<typeof import("../../app/components/base/Link.vue")['default']>
   LazyBaseMessage: LazyComponent<typeof import("../../app/components/base/Message.vue")['default']>
   LazyBaseNavigation: LazyComponent<typeof import("../../app/components/base/Navigation.vue")['default']>

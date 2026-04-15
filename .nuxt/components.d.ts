@@ -20,6 +20,7 @@ export const BaseCard: typeof import("../app/components/base/Card.vue")['default
 export const BaseCardTeam: typeof import("../app/components/base/CardTeam.vue")['default']
 export const BaseHeader: typeof import("../app/components/base/Header.vue")['default']
 export const BaseHeaderSection: typeof import("../app/components/base/HeaderSection.vue")['default']
+export const BaseIcon: typeof import("../app/components/base/Icon.vue")['default']
 export const BaseLink: typeof import("../app/components/base/Link.vue")['default']
 export const BaseMessage: typeof import("../app/components/base/Message.vue")['default']
 export const BaseNavigation: typeof import("../app/components/base/Navigation.vue")['default']
@@ -190,6 +191,7 @@ export const LazyBaseCard: LazyComponent<typeof import("../app/components/base/C
 export const LazyBaseCardTeam: LazyComponent<typeof import("../app/components/base/CardTeam.vue")['default']>
 export const LazyBaseHeader: LazyComponent<typeof import("../app/components/base/Header.vue")['default']>
 export const LazyBaseHeaderSection: LazyComponent<typeof import("../app/components/base/HeaderSection.vue")['default']>
+export const LazyBaseIcon: LazyComponent<typeof import("../app/components/base/Icon.vue")['default']>
 export const LazyBaseLink: LazyComponent<typeof import("../app/components/base/Link.vue")['default']>
 export const LazyBaseMessage: LazyComponent<typeof import("../app/components/base/Message.vue")['default']>
 export const LazyBaseNavigation: LazyComponent<typeof import("../app/components/base/Navigation.vue")['default']>

@@ -7,9 +7,9 @@ import { leads, table } from '~/utils/test';
 </script>
 
 <template>
-  <div class="font-sans">
+  <div class="flex flex-col gap-20">
 
-    <header class="flex justify-between items-center mb-12 pb-8 border-b">
+    <header class="flex justify-between items-center">
       <div>
         <span class="font-medium text-xs uppercase tracking-widest">Company Name</span>
         <baseHeader label="First Name" />
@@ -19,7 +19,7 @@ import { leads, table } from '~/utils/test';
       </div>
     </header>
 
-    <section>
+    <section class="bg-gray-700/50 p-2">
       <baseHeaderSection label="OVERVIEW" />
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div v-for="label in ['Open Inquiries', 'Visits Scheduled', 'Active Estimates']" :key="label"
@@ -29,7 +29,7 @@ import { leads, table } from '~/utils/test';
       </div>
     </section>
 
-    <section>
+    <section class="bg-gray-700/50 p-2">
       <baseHeaderSection label="CLIENTS & LEADS" />
       <baseTable :data="table" />
     </section>

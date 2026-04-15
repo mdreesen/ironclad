@@ -16,6 +16,6 @@ const props = defineProps({
 
 <template>
     <NuxtLink :to="path">
-        <UButton :icon="icon" size="md" color="neutral" variant="solid">{{ label }}</UButton>
+        <UButton :icon="icon" size="md" color="neutral" variant="subtle">{{ label }}</UButton>
     </NuxtLink>
 </template>

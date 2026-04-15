@@ -13,15 +13,6 @@ const invoices = ref([
   { id: 'INV-9201', client: 'Big Sky Bricks', project: 'Showroom Epoxy', amount: 3800, status: 'Paid', date: '2026-04-12' },
 ]);
 
-const getStatusStyle = (status: string) => {
-  switch(status) {
-    case 'Paid': return 'bg-emerald-50 text-emerald-700 border-emerald-100';
-    case 'Overdue': return 'bg-rose-50 text-rose-700 border-rose-100';
-    case 'Pending': return 'bg-amber-50 text-amber-700 border-amber-100';
-    default: return 'bg-zinc-50 text-zinc-500 border-zinc-100';
-  }
-};
-
 const totalRevenue = computed(() => invoices.value.reduce((acc, inv) => acc + inv.amount, 0));
 const outstanding = computed(() => 
   invoices.value.filter(i => i.status !== 'Paid').reduce((acc, inv) => acc + inv.amount, 0)
@@ -47,18 +38,9 @@ const outstanding = computed(() =>
       </div>
     </header>
 
-    <main class="max-w-7xl mx-auto">
-      <div class="border border-zinc-200 rounded-sm shadow-sm overflow-hidden">
-        <div class="p-6 border-b border-zinc-100 flex justify-between items-center bg-zinc-50/30">
-          <input type="text" placeholder="Search by client or project..." class="bg-transparent border-none outline-none text-sm font-medium w-full max-w-md placeholder:text-zinc-300" />
-          <div class="flex gap-4">
-            <button class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-950 transition-colors">Filters</button>
-            <baseButton  @click="downloadExcel" label="Export" />
-          </div>
-        </div>
+    <main class="max-w-7xl mx-auto bg-gray-700/50">
 
         <baseTable :data="invoices" />
-      </div>
     </main>
   </div>
 </template>

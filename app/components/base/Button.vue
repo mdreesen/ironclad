@@ -12,5 +12,5 @@ const props = defineProps({
 </script>
 
 <template>
-    <UButton :icon="icon" size="md" color="neutral" variant="solid">{{ label }}</UButton>
+    <UButton :icon="icon" size="md" color="neutral" variant="subtle">{{ label }}</UButton>
 </template>

@@ -26,18 +26,18 @@ const props = defineProps({
 <template>
     <UCard class="bg-gray-700/50">
         <template #header>
-            {{ label }}
+            <spn class="text-xl">{{ label }}</spn>
         </template>
 
         <div>
             <div>{{ description }}</div>
-            <span>{{ status }}</span>
+            <!-- <span class="text-sm italic text-blue-500 bg-blue-700/50 p-2 rounded">{{ status }}</span> -->
         </div>
 
         <template #footer>
             <div class="flex justify-around">
-                <baseMessage label="message" message_type="sms" :phone_number="phone_number" />
-                <baseMessage label="Call" message_type="tel" :phone_number="phone_number" />
+                <baseMessage icon="lucide:smartphone" label="Call" message_type="tel" :phone_number="phone_number" />
+                <baseMessage icon="lucide:message-circle" label="message" message_type="sms" :phone_number="phone_number" />
             </div>
         </template>
     </UCard>

@@ -10,6 +10,10 @@ const items = computed<NavigationMenuItem[]>(() => [{
   to: '/dashboard',
   // icon: 'i-lucide-book-open',
 }, {
+  label: 'Finances',
+  to: '/dashboard/finances',
+  // icon: 'mdi-light:account',
+}, {
   label: 'Invoices',
   to: '/dashboard/invoices',
   // icon: 'mdi-light:account',
@@ -28,10 +32,8 @@ const items = computed<NavigationMenuItem[]>(() => [{
         <!-- <span class="text-2xl font-bold">
           IRONCLAD
         </span> -->
-        <NuxtImg
-          class="h-10 w-10 relative rounded-full object-cover" alt="White Raven Logo"
-          format="webp" width="200px" height="200px" src="/images/logo.webp" loading="lazy"
-          fetch-priority="low" />
+        <NuxtImg class="h-10 w-10 relative rounded-full object-cover" alt="White Raven Logo" format="webp" width="200px"
+          height="200px" src="/images/logo.webp" loading="lazy" fetch-priority="low" />
       </NuxtLink>
     </template>
 
