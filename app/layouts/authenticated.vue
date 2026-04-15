@@ -10,7 +10,7 @@ useHead({
 <template>
     <div>
         <baseNavigation />
-        <main class="p-8 min-h-screen">
+        <main class="p-4 min-h-screen">
             <slot />
         </main>
     </div>

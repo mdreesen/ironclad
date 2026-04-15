@@ -8,5 +8,5 @@
 </script>
 
 <template>
-    <h2 class="text-4xl tracking-tighter font-bold text-normal flex justify-center mb-2" v-html="label"></h2>
+    <h2 class="text-4xl py-4 tracking-tighter font-bold text-normal flex justify-center mb-2" v-html="label"></h2>
 </template>

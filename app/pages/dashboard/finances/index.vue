@@ -23,7 +23,7 @@ const margins = ref([
   <div>
     <div class="max-w-7xl mx-auto">
       
-      <header class="flex justify-between items-end mb-16">
+      <!-- <header class="flex justify-between items-end mb-16">
         <div>
           <span class="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 block mb-2">Business Intelligence</span>
           <h1 class="text-5xl font-black uppercase italic tracking-tighter">Ironclad <span class="text-zinc-200 text-normal font-medium">Fiscal.</span></h1>
@@ -32,7 +32,9 @@ const margins = ref([
           <button class="bg-white border border-zinc-200 px-6 py-4 text-[10px] font-black uppercase tracking-widest rounded-sm">Monthly Report</button>
           <button class="bg-zinc-900 text-white px-6 py-4 text-[10px] font-black uppercase tracking-widest rounded-sm">Tax Export</button>
         </div>
-      </header>
+      </header> -->
+
+      <appHero title="Finances" title_small="Business Intelligence" />
 
       <section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
         <div v-for="stat in stats" :key="stat.label" class="bg-white p-8 border border-zinc-200 rounded-sm shadow-sm">
@@ -45,43 +47,11 @@ const margins = ref([
         </div>
       </section>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        <div class="lg:col-span-2 bg-white p-10 border border-zinc-200 rounded-sm shadow-sm">
-          <h3 class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-8 italic">Profit Margin by Division</h3>
-          <div class="space-y-10">
-            <div v-for="item in margins" :key="item.name">
-              <div class="flex justify-between items-end mb-3">
-                <span class="text-xs font-bold uppercase tracking-tight italic">{{ item.name }}</span>
-                <span class="text-xs font-mono font-bold">{{ item.margin }}%</span>
-              </div>
-              <div class="h-2 w-full bg-zinc-100 rounded-full overflow-hidden">
-                <div class="h-full transition-all duration-1000" :class="item.color" :style="{ width: item.margin + '%' }"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-zinc-950 p-10 rounded-sm shadow-2xl text-white border-t-4 border-orange-600">
-          <h3 class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 mb-8 italic text-center">Accounts Receivable Aging</h3>
-          <div class="space-y-6">
-            <div class="flex justify-between items-center border-b border-zinc-800 pb-4">
-              <span class="text-[10px] font-bold text-zinc-500 uppercase">Current (0-30)</span>
-              <span class="font-black text-emerald-500">$12,200</span>
-            </div>
-            <div class="flex justify-between items-center border-b border-zinc-800 pb-4">
-              <span class="text-[10px] font-bold text-zinc-500 uppercase">Late (31-60)</span>
-              <span class="font-black text-amber-500">$4,500</span>
-            </div>
-            <div class="flex justify-between items-center border-b border-zinc-800 pb-4">
-              <span class="text-[10px] font-bold text-zinc-500 uppercase">Overdue (60+)</span>
-              <span class="font-black text-rose-500">$1,700</span>
-            </div>
-          </div>
-          <button class="w-full mt-12 py-4 bg-zinc-800 text-[9px] font-black uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all">Send Reminders</button>
-        </div>
-
-      </div>
+      <section>
+        <baseChartLine />
+        <baseChartBar />
+        <baseChartDonut />
+      </section>
     </div>
   </div>
 </template>

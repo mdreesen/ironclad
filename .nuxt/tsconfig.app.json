@@ -118,6 +118,12 @@
       "#pwa": [
         "../node_modules/@vite-pwa/nuxt/dist/runtime/composables/index"
       ],
+      "@unovis/ts": [
+        "../node_modules/@unovis/ts"
+      ],
+      "@unovis/ts/*": [
+        "../node_modules/@unovis/ts/*"
+      ],
       "#vue-router": [
         "../node_modules/vue-router"
       ],
@@ -193,6 +199,7 @@
     "../node_modules/@nuxt/ui/node_modules",
     "../node_modules/@vite-pwa/nuxt/node_modules",
     "../node_modules/@nuxt/image/node_modules",
+    "../node_modules/nuxt-charts/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxt/icon/node_modules",

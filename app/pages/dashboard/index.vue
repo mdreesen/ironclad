@@ -9,7 +9,7 @@ import { leads, table } from '~/utils/test';
 <template>
   <div class="flex flex-col gap-20">
 
-    <header class="flex justify-between items-center">
+    <!-- <header class="flex justify-between items-center">
       <div>
         <span class="font-medium text-xs uppercase tracking-widest">Company Name</span>
         <baseHeader label="First Name" />
@@ -17,9 +17,11 @@ import { leads, table } from '~/utils/test';
       <div class="flex gap-4">
         <baseButton label="New Entry" />
       </div>
-    </header>
+    </header> -->
 
-    <section class="bg-gray-700/50 p-2">
+    <appHero title="Company" title_small="Welcome"  />
+
+    <section class="bg-gray-700/50 p-2 rounded-lg">
       <baseHeaderSection label="OVERVIEW" />
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div v-for="label in ['Open Inquiries', 'Visits Scheduled', 'Active Estimates']" :key="label"
@@ -29,7 +31,7 @@ import { leads, table } from '~/utils/test';
       </div>
     </section>
 
-    <section class="bg-gray-700/50 p-2">
+    <section class="bg-gray-700/50 p-2 rounded-lg">
       <baseHeaderSection label="CLIENTS & LEADS" />
       <baseTable :data="table" />
     </section>

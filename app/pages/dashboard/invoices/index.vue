@@ -38,9 +38,8 @@ const outstanding = computed(() =>
       </div>
     </header>
 
-    <main class="max-w-7xl mx-auto bg-gray-700/50">
-
+    <section class="max-w-7xl mx-auto bg-gray-700/50 rounded-lg">
         <baseTable :data="invoices" />
-    </main>
+    </section>
   </div>
 </template>
