@@ -24,7 +24,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <UCard class="bg-gray-700/50">
+    <UCard class="bg-gray-700/50 divide-none">
         <template #header>
             <spn class="text-xl">{{ label }}</spn>
         </template>
