@@ -18,6 +18,7 @@ export const AppHero: typeof import("../app/components/app/Hero.vue")['default']
 export const AppInvoice: typeof import("../app/components/app/Invoice.vue")['default']
 export const BaseButton: typeof import("../app/components/base/Button.vue")['default']
 export const BaseCard: typeof import("../app/components/base/Card.vue")['default']
+export const BaseCardFinances: typeof import("../app/components/base/CardFinances.vue")['default']
 export const BaseCardTeam: typeof import("../app/components/base/CardTeam.vue")['default']
 export const BaseChartBar: typeof import("../app/components/base/ChartBar.vue")['default']
 export const BaseChartDonut: typeof import("../app/components/base/ChartDonut.vue")['default']
@@ -204,6 +205,7 @@ export const LazyAppHero: LazyComponent<typeof import("../app/components/app/Her
 export const LazyAppInvoice: LazyComponent<typeof import("../app/components/app/Invoice.vue")['default']>
 export const LazyBaseButton: LazyComponent<typeof import("../app/components/base/Button.vue")['default']>
 export const LazyBaseCard: LazyComponent<typeof import("../app/components/base/Card.vue")['default']>
+export const LazyBaseCardFinances: LazyComponent<typeof import("../app/components/base/CardFinances.vue")['default']>
 export const LazyBaseCardTeam: LazyComponent<typeof import("../app/components/base/CardTeam.vue")['default']>
 export const LazyBaseChartBar: LazyComponent<typeof import("../app/components/base/ChartBar.vue")['default']>
 export const LazyBaseChartDonut: LazyComponent<typeof import("../app/components/base/ChartDonut.vue")['default']>

@@ -9,16 +9,6 @@ import { leads, table } from '~/utils/test';
 <template>
   <div class="flex flex-col gap-20">
 
-    <!-- <header class="flex justify-between items-center">
-      <div>
-        <span class="font-medium text-xs uppercase tracking-widest">Company Name</span>
-        <baseHeader label="First Name" />
-      </div>
-      <div class="flex gap-4">
-        <baseButton label="New Entry" />
-      </div>
-    </header> -->
-
     <appHero title="Company" title_small="Welcome"  />
 
     <section class="bg-gray-700/50 p-2 rounded-lg">

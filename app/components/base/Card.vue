@@ -16,7 +16,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <UCard class="bg-gray-700/50">
+    <UCard class="bg-gray-700/50 text-center">
         <template #header>
             {{ label }}
         </template>

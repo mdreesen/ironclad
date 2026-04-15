@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 <template>
     <header class="max-w-7xl mx-auto">
-        <div class="flex justify-between items-end mb-12">
+        <div class="flex justify-between items-end">
             <div>
                 <span class="text-[10px] font-black uppercase tracking-[0.3em] block mb-2">
                     {{ title_small }}
