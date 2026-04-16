@@ -1,35 +1,97 @@
 <script setup lang="ts">
 definePageMeta({
-    layout: 'authenticated',
+  layout: 'authenticated',
 });
+/**
+ * IRONCLAD FISCAL LEDGER v2
+ * DESIGN: SWISS ARCHITECTURAL GRID
+ */
 
-// Data for the pulse cards
-const stats = ref([
-    { label: 'Total Revenue', value: '$142,500', trend: '+12%', color: 'text-zinc-900' },
-    { label: 'Net Profit', value: '$58,200', trend: '+8%', color: 'text-emerald-600' },
-    { label: 'Outstanding AR', value: '$18,400', trend: '-2%', color: 'text-rose-600' },
-    { label: 'Avg. Project Margin', value: '42%', trend: '+4%', color: 'text-zinc-900' }
-]);
+const financialMetrics = [
+  { label: '01 / ANNUAL VOLUME', value: '1,332,400', unit: 'USD' },
+  { label: '02 / OUTSTANDING', value: '42,850', unit: 'USD' },
+  { label: '03 / NET MARGIN', value: '34.2', unit: '%' }
+];
+
+// Data for the 'Flow' Graph (Revenue vs Expenses)
+const flowData = [20, 45, 30, 80, 65, 90, 100]; 
 </script>
 
 <template>
-    <div class="flex flex-col gap-20">
+  <div>
 
-        <appHero title="Finances" title_small="Business Intelligence" />
+    <appHero />
 
-        <section class="bg-gray-700/50 p-2 rounded-lg">
-            <baseHeaderSection label="OVERVIEW" />
-            <div class="flex flex-wrap justify-around">
-                <div v-for="stat in stats" :key="stat.label" class="my-8 shadow-sm w-full max-w-lg">
-                    <baseCardFinances :label="stat.label" :value="stat.value" :trend="stat.trend" />
-                </div>
+    <main class="max-w-[1400px] mx-auto">
+      
+      <section class="grid grid-cols-1 md:grid-cols-12 border-b border-black mb-12">
+        <div v-for="(stat, i) in financialMetrics" :key="i" 
+          class="col-span-4 border-t md:border-t-0 border-l border-black md:last:border-r p-8 hover:bg-black hover:text-white transition-colors duration-500 group">
+          <span class="text-[9px] font-black tracking-[0.2em] uppercase block mb-12 text-zinc-500 group-hover:text-zinc-400">{{ stat.label }}</span>
+          <div class="flex items-baseline gap-2">
+            <span class="text-5xl md:text-6xl font-black tracking-tighter tabular-nums">{{ stat.value }}</span>
+            <span class="text-[10px] font-bold uppercase">{{ stat.unit }}</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b border-black mb-24">
+        
+        <div class="col-span-1 lg:col-span-8 p-10 border-l border-black">
+          <span class="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500 mb-12 block">Trajectory // Volume Growth</span>
+          <div class="h-64 w-full relative">
+            <svg viewBox="0 0 700 200" class="w-full h-full overflow-visible">
+              <line v-for="n in 5" :key="n" x1="0" :y1="n * 40" x2="700" :y2="n * 40" stroke="black" stroke-width="0.5" stroke-dasharray="4" opacity="0.1" />
+              <path 
+                d="M0 180 L 100 140 L 200 160 L 300 80 L 400 100 L 500 40 L 700 20" 
+                fill="none" 
+                stroke="black" 
+                stroke-width="3" 
+              />
+              <circle cx="500" cy="40" r="4" fill="black" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="col-span-1 lg:col-span-4 p-10 border-l border-r border-black bg-zinc-50">
+          <span class="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500 mb-12 block">Allocation // By Sector</span>
+          <div class="flex items-end justify-between h-64 gap-2">
+            <div v-for="(h, i) in [40, 70, 90, 55]" :key="i" class="flex-1 bg-black group relative" :style="{ height: h + '%' }">
+              <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-[8px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                {{ ['LABOR', 'MAT', 'LOG', 'TAX'][i] }}
+              </span>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <baseChartLine />
-            <baseChartBar />
-            <baseChartDonut />
-        </section>
-    </div>
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="col-span-1 lg:col-span-12">
+          <div class="flex justify-between items-end mb-8">
+            <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500 italic-none">Remittance Feed</h2>
+            <span class="text-[9px] font-mono text-zinc-400">Total verified transactions: 1,204</span>
+          </div>
+          <table class="w-full border-t border-black">
+            <tbody class="divide-y divide-black/10">
+              <tr v-for="n in 4" :key="n" class="hover:bg-zinc-50 transition-colors cursor-pointer group">
+                <td class="py-8 text-[10px] font-mono text-zinc-400 w-24">#460{{n}}</td>
+                <td class="py-8">
+                  <span class="text-xl font-black uppercase tracking-tighter block">Flathead Valley Site {{n}}</span>
+                  <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest">March 2026</span>
+                </td>
+                <td class="py-8 text-right text-3xl font-black tracking-tighter tabular-nums">
+                  $12,500.00
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
 </template>
+
+<style scoped>
+.tabular-nums { font-variant-numeric: tabular-nums; }
+</style>
