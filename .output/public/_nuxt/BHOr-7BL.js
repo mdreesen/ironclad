@@ -1,0 +1,1 @@
+import{d as n,o,i as a,j as c,g as s,t as i,_ as r}from"./7IMOlbV4.js";const _=n({__name:"Button",props:{label:{type:String,required:!0},icon:{type:String}},setup(t){return(u,l)=>{const e=r;return o(),a(e,{icon:t.icon,size:"md",color:"neutral",variant:"subtle"},{default:c(()=>[s(i(t.label),1)]),_:1},8,["icon"])}}}),p=Object.assign(_,{__name:"BaseButton"});export{p as _};

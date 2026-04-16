@@ -28,8 +28,10 @@ export const BaseHeader: typeof import("../app/components/base/Header.vue")['def
 export const BaseHeaderSection: typeof import("../app/components/base/HeaderSection.vue")['default']
 export const BaseIcon: typeof import("../app/components/base/Icon.vue")['default']
 export const BaseLink: typeof import("../app/components/base/Link.vue")['default']
+export const BaseLogs: typeof import("../app/components/base/Logs.vue")['default']
 export const BaseMessage: typeof import("../app/components/base/Message.vue")['default']
 export const BaseNavigation: typeof import("../app/components/base/Navigation.vue")['default']
+export const BaseStats: typeof import("../app/components/base/Stats.vue")['default']
 export const BaseTable: typeof import("../app/components/base/Table.vue")['default']
 export const UColorModeAvatar: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']
 export const UColorModeButton: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']
@@ -216,8 +218,10 @@ export const LazyBaseHeader: LazyComponent<typeof import("../app/components/base
 export const LazyBaseHeaderSection: LazyComponent<typeof import("../app/components/base/HeaderSection.vue")['default']>
 export const LazyBaseIcon: LazyComponent<typeof import("../app/components/base/Icon.vue")['default']>
 export const LazyBaseLink: LazyComponent<typeof import("../app/components/base/Link.vue")['default']>
+export const LazyBaseLogs: LazyComponent<typeof import("../app/components/base/Logs.vue")['default']>
 export const LazyBaseMessage: LazyComponent<typeof import("../app/components/base/Message.vue")['default']>
 export const LazyBaseNavigation: LazyComponent<typeof import("../app/components/base/Navigation.vue")['default']>
+export const LazyBaseStats: LazyComponent<typeof import("../app/components/base/Stats.vue")['default']>
 export const LazyBaseTable: LazyComponent<typeof import("../app/components/base/Table.vue")['default']>
 export const LazyUColorModeAvatar: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']>
 export const LazyUColorModeButton: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']>

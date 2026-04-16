@@ -47,9 +47,9 @@ const triggerPayment = async () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white text-black font-sans p-6 lg:p-12 selection:bg-black selection:text-white">
+  <div>
     
-    <header class="max-w-300 mx-auto grid grid-cols-12 border-t-12 border-black pt-8 mb-24">
+    <!-- <header class="max-w-300 mx-auto grid grid-cols-12 border-t-12 border-black pt-8 mb-24">
       <div class="col-span-12 md:col-span-8">
         <h1 class="text-6xl md:text-8xl font-black uppercase tracking-[-0.05em] leading-[0.85]">NEW<br>INVOICE</h1>
       </div>
@@ -57,7 +57,9 @@ const triggerPayment = async () => {
         <span class="text-[10px] font-black tracking-[0.3em] uppercase block mb-4 text-zinc-400">Reference ID</span>
         <input v-model="invoice.number" class="text-4xl font-black uppercase tracking-tighter w-full md:text-right bg-transparent border-none focus:ring-0 p-0" />
       </div>
-    </header>
+    </header> -->
+
+    <appHero />
 
     <main class="max-w-300 mx-auto">
       

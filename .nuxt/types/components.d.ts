@@ -28,8 +28,10 @@ interface _GlobalComponents {
   BaseHeaderSection: typeof import("../../app/components/base/HeaderSection.vue")['default']
   BaseIcon: typeof import("../../app/components/base/Icon.vue")['default']
   BaseLink: typeof import("../../app/components/base/Link.vue")['default']
+  BaseLogs: typeof import("../../app/components/base/Logs.vue")['default']
   BaseMessage: typeof import("../../app/components/base/Message.vue")['default']
   BaseNavigation: typeof import("../../app/components/base/Navigation.vue")['default']
+  BaseStats: typeof import("../../app/components/base/Stats.vue")['default']
   BaseTable: typeof import("../../app/components/base/Table.vue")['default']
   UColorModeAvatar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']
   UColorModeButton: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']
@@ -216,8 +218,10 @@ interface _GlobalComponents {
   LazyBaseHeaderSection: LazyComponent<typeof import("../../app/components/base/HeaderSection.vue")['default']>
   LazyBaseIcon: LazyComponent<typeof import("../../app/components/base/Icon.vue")['default']>
   LazyBaseLink: LazyComponent<typeof import("../../app/components/base/Link.vue")['default']>
+  LazyBaseLogs: LazyComponent<typeof import("../../app/components/base/Logs.vue")['default']>
   LazyBaseMessage: LazyComponent<typeof import("../../app/components/base/Message.vue")['default']>
   LazyBaseNavigation: LazyComponent<typeof import("../../app/components/base/Navigation.vue")['default']>
+  LazyBaseStats: LazyComponent<typeof import("../../app/components/base/Stats.vue")['default']>
   LazyBaseTable: LazyComponent<typeof import("../../app/components/base/Table.vue")['default']>
   LazyUColorModeAvatar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']>
   LazyUColorModeButton: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']>

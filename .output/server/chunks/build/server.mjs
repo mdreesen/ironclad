@@ -699,7 +699,7 @@ const _routes = [
   {
     name: "dashboard-invoices-create",
     path: "/dashboard/invoices/create",
-    component: () => import('./create-CMYe2W6l.mjs')
+    component: () => import('./create-ChYI5sVQ.mjs')
   },
   {
     name: "dashboard-invoices-id-success",
@@ -710,13 +710,13 @@ const _routes = [
     name: "dashboard-finances",
     path: "/dashboard/finances",
     meta: __nuxt_page_meta$5 || {},
-    component: () => import('./index-BJazs747.mjs')
+    component: () => import('./index-_3nR0m5e.mjs')
   },
   {
     name: "dashboard-invoices",
     path: "/dashboard/invoices",
     meta: __nuxt_page_meta$4 || {},
-    component: () => import('./index-DOVRW3ts.mjs')
+    component: () => import('./index-SUAh8YkC.mjs')
   },
   {
     name: "dashboard-schedule",
@@ -728,13 +728,13 @@ const _routes = [
     name: "dashboard-team",
     path: "/dashboard/team",
     meta: __nuxt_page_meta$2 || {},
-    component: () => import('./index-BY1pmZm7.mjs')
+    component: () => import('./index-x4PcJOE-.mjs')
   },
   {
     name: "dashboard",
     path: "/dashboard",
     meta: __nuxt_page_meta$1 || {},
-    component: () => import('./index-BJXWC95P.mjs')
+    component: () => import('./index-HcsySqgT.mjs')
   },
   {
     name: "forgotpassword",
@@ -763,7 +763,7 @@ const _routes = [
   {
     name: __nuxt_page_meta?.name,
     path: "/",
-    component: () => import('./index-DUeIIDN-.mjs'),
+    component: () => import('./index-DpMQ6Czt.mjs'),
     children: [
       {
         name: "index",
@@ -7851,7 +7851,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_0 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  authenticated: defineAsyncComponent(() => import('./authenticated-BZk_RFtD.mjs').then((m) => m.default || m)),
+  authenticated: defineAsyncComponent(() => import('./authenticated-CK6ExkX-.mjs').then((m) => m.default || m)),
   default: defineAsyncComponent(() => import('./default-BmuwWmbv.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
