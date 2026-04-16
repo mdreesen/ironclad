@@ -5,6 +5,7 @@ import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { escapeHtml } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/@vue/shared/dist/shared.cjs.js';
+import Stripe from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/stripe/esm/stripe.esm.node.js';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/ufo/dist/index.mjs';
 import destr, { destr as destr$1 } from 'file:///Users/mdreesen/Documents/Programming/business-projects/ironclad/node_modules/destr/dist/index.mjs';
@@ -2470,7 +2471,22 @@ _CDL9K4SbdWyOtUCQSbOayodB0oyRMJXCm3XCI5J_j3Q,
 _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw
 ];
 
-const assets = {};
+const assets = {
+  "/index.mjs": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1faff-TtzYMuUDpA/RriqJZsLdcbn+ObQ\"",
+    "mtime": "2026-04-16T03:04:45.456Z",
+    "size": 129791,
+    "path": "index.mjs"
+  },
+  "/index.mjs.map": {
+    "type": "application/json",
+    "etag": "\"71ca8-hK8Q81tZ2Hm4F6vpEXNM0Q3X5JI\"",
+    "mtime": "2026-04-16T03:04:45.456Z",
+    "size": 466088,
+    "path": "index.mjs.map"
+  }
+};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));
@@ -3411,10 +3427,12 @@ const _GJ41_5 = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
+const _lazy_KaHc6v = () => Promise.resolve().then(function () { return index_post$1; });
 const _lazy__MX71i = () => Promise.resolve().then(function () { return renderer; });
 
 const handlers = [
   { route: '', handler: _0NszlC, lazy: false, middleware: true, method: undefined },
+  { route: '/api/stripe', handler: _lazy_KaHc6v, lazy: true, middleware: false, method: "post" },
   { route: '/__nuxt_error', handler: _lazy__MX71i, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
   { route: '/api/_nuxt_icon/:collection', handler: _oECbNd, lazy: false, middleware: false, method: undefined },
@@ -3682,6 +3700,48 @@ const styles = {};
 const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+  apiVersion: "2026-03-25.dahlia"
+  // Or latest
+});
+const index_post = defineEventHandler(async (event) => {
+  const body = await readBody(event);
+  const { amount, invoiceNumber, clientName } = body;
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: `Invoice #${invoiceNumber} - ${clientName}`,
+              description: "Ironclad Construction & Finishing Services"
+            },
+            unit_amount: Math.round(amount * 100)
+            // Stripe uses cents
+          },
+          quantity: 1
+        }
+      ],
+      mode: "payment",
+      success_url: `${process.env.PUBLIC_URL}/dashboard/invoices/${invoiceNumber}/success`,
+      cancel_url: `${process.env.PUBLIC_URL}/dashboard/invoices/create`
+    });
+    return { url: session.url };
+  } catch (error) {
+    throw createError({
+      statusCode: 500,
+      statusMessage: error.message
+    });
+  }
+});
+
+const index_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: index_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

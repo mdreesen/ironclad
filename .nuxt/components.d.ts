@@ -16,6 +16,7 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 export const AppHero: typeof import("../app/components/app/Hero.vue")['default']
 export const AppInvoice: typeof import("../app/components/app/Invoice.vue")['default']
+export const AppScheduler: typeof import("../app/components/app/Scheduler.vue")['default']
 export const BaseButton: typeof import("../app/components/base/Button.vue")['default']
 export const BaseCard: typeof import("../app/components/base/Card.vue")['default']
 export const BaseCardFinances: typeof import("../app/components/base/CardFinances.vue")['default']
@@ -203,6 +204,7 @@ export const ColorScheme: typeof import("../node_modules/@nuxtjs/color-mode/dist
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const LazyAppHero: LazyComponent<typeof import("../app/components/app/Hero.vue")['default']>
 export const LazyAppInvoice: LazyComponent<typeof import("../app/components/app/Invoice.vue")['default']>
+export const LazyAppScheduler: LazyComponent<typeof import("../app/components/app/Scheduler.vue")['default']>
 export const LazyBaseButton: LazyComponent<typeof import("../app/components/base/Button.vue")['default']>
 export const LazyBaseCard: LazyComponent<typeof import("../app/components/base/Card.vue")['default']>
 export const LazyBaseCardFinances: LazyComponent<typeof import("../app/components/base/CardFinances.vue")['default']>

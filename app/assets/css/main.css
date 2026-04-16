@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+* {
+  --ui-bg: whiate;
+}
+
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
   --color-green-50: #EFFDF5;

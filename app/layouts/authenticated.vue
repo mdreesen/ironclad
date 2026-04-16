@@ -8,9 +8,9 @@ useHead({
 </script>
 
 <template>
-    <div>
+    <div class="min-h-screen">
         <baseNavigation />
-        <main class="p-4 min-h-screen">
+        <main>
             <slot />
         </main>
     </div>

@@ -17,6 +17,10 @@ const items = computed<NavigationMenuItem[]>(() => [{
   label: 'Invoices',
   to: '/dashboard/invoices',
   // icon: 'mdi-light:account',
+},{
+  label: 'Schedule',
+  to: '/dashboard/schedule',
+  // icon: 'mdi-light:account',
 }, {
   label: 'Team',
   // icon: 'i-simple-icons-figma',
@@ -25,7 +29,7 @@ const items = computed<NavigationMenuItem[]>(() => [{
 </script>
 
 <template>
-  <UHeader mode="slideover" class="border-none">
+  <UHeader mode="slideover" class="border-none bg-transparent">
     <template #title>
       <!-- Logo/Brand Name -->
       <NuxtLink to="/" class="flex items-center text-2xl font-extrabold h-10">

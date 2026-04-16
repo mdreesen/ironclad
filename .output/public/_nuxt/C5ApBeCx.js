@@ -1,1 +1,0 @@
-import{d as o,C as a,p as s,c as n,Y as r,o as l}from"./BTtG-bxr.js";const d=o({__name:"default",setup(c){const e=a();return s({meta:[{property:"og:title",content:`Ascend - ${e.meta.title}`}]}),(t,u)=>(l(),n("div",null,[r(t.$slots,"default")]))}});export{d as default};
