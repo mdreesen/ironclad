@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Stat } from '~/types/stat'
 definePageMeta({
   layout: 'authenticated',
 });
@@ -10,7 +11,13 @@ const chartData = [
   { month: 'April', clients: 260 },
   { month: 'May', clients: 209 },
   { month: 'June', clients: 250 }
-]
+];
+
+const statData: Stat[] = [
+  { label: '01 / REVENUE', value: '184,200', unit: 'USD' },
+  { label: '02 / PIPELINE', value: '24', unit: 'LEADS' },
+  { label: '03 / MARGIN', value: '38.4', unit: '%' }
+];
 </script>
 
 <template>
@@ -21,7 +28,7 @@ const chartData = [
     <main class="max-w-350 mx-auto">
 
       <section>
-        <baseStats />
+        <baseStats :data="statData" />
       </section>
 
       <section>
