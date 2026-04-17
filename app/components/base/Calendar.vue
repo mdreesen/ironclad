@@ -20,7 +20,7 @@ const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 </script>
 
 <template>
-    <UCalendar :number-of-months="3" />
+    <UCalendar />
 </template>
 
 <style scoped>

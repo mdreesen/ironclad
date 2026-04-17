@@ -7,10 +7,10 @@
   --ui-text-muted: black;
   --ui-primary: black;
   --ui-text-toned: black;
-  /* --ui-text: black; */
+  --ui-text: black;
   --ui-text-inverted: black;
   --ui-text-highlighted: black;
-  /* color: black; */
+  --ui-bg-elevated: #E2E8F0;
 }
 
 @theme static {
