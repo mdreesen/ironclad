@@ -1,8 +1,4 @@
 <script setup lang="ts">
-/**
- * IRONCLAD INVOICE ARCHITECT
- * DESIGN: DANISH/SWISS MINIMALISM
- */
 
 const invoice = ref({
   number: '2026-001',
@@ -77,7 +73,7 @@ const triggerPayment = async () => {
 
         <div v-for="(item, i) in invoice.items" :key="i" class="grid grid-cols-12 border-b border-black py-8 px-4 group hover:bg-zinc-50 transition-colors">
           <div class="col-span-6">
-            <input v-model="item.description" placeholder="SERVICE DESCRIPTION" class="text-lg font-black uppercase tracking-tighter w-full bg-transparent border-none focus:ring-0 p-0" />
+            <input v-model="item.description" placeholder="SERVICE" class="text-md font-black uppercase tracking-tighter w-full bg-transparent border-none focus:ring-0 p-0" />
           </div>
           <div class="col-span-2 text-center">
             <input type="number" v-model="item.qty" class="text-lg font-black text-center w-full bg-transparent border-none focus:ring-0 p-0 tabular-nums" />
@@ -117,17 +113,21 @@ const triggerPayment = async () => {
 
           <button @click="triggerPayment" 
             class="p-8 font-black uppercase tracking-[0.3em] text-[10px] bg-zinc-50 hover:bg-black hover:text-white transition-all flex justify-between items-center relative group">
-            02 / Instant Remit
+            02 / Payment
             <span class="text-[8px] font-mono border border-black px-2 py-1 group-hover:border-white">STRIPE</span>
           </button>
-
-          <nuxt-link to="/dashboard/invoices" class="p-8 border-b md:border-b-0 md:border-l border-black font-black uppercase tracking-[0.3em] text-[10px] hover:bg-black hover:text-white transition-colors flex justify-between items-center group">
+          <button @click="emailInvoice" 
+            class="p-8 font-black uppercase tracking-[0.3em] text-[10px] bg-zinc-50 hover:bg-black hover:text-white transition-all flex justify-between items-center relative group border-b md:border-b-0 md:border-l border-black ">
+            03 / Email Invoice
+            <span class="text-[8px] font-mono border border-black px-2 py-1 group-hover:border-white">Email</span>
+          </button>
+        </div>
+        <nuxt-link to="/dashboard/invoices" class="no-print text-center justify-center p-8 border border-black font-black uppercase tracking-[0.3em] text-[15px] hover:bg-black hover:text-white transition-colors flex justify-between items-center group">
           <button>
             03 / Cancel
             <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
           </button>
         </nuxt-link>
-        </div>
       </footer>
     </main>
   </div>

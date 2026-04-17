@@ -8,7 +8,7 @@ import { leads, table } from '~/utils/test';
 
 <template>
   <!-- <baseHeader label="Create your invoice" /> -->
-  <section class="mt-10">
+  <section class="mt-10 p-4">
     <appInvoice />
   </section>
 </template>

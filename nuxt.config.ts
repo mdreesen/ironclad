@@ -97,7 +97,7 @@ export default defineNuxtConfig({
       //     "url": "https://www.ascendpod.com"
       //   }
       // ],
-      prefer_related_applications: true,
+      // prefer_related_applications: true,
     },
     workbox: {
       'navigateFallback': '/',

@@ -26,7 +26,6 @@ import 'unhead/server';
 import 'devalue';
 import 'unhead/utils';
 
-//#region src/utils.ts
 function flatHooks(configHooks, hooks = {}, parentName) {
 	for (const key in configHooks) {
 		const subHook = configHooks[key];
@@ -44,7 +43,7 @@ const createTask = /* @__PURE__ */ (() => {
 function callHooks(hooks, args, startIndex, task) {
 	for (let i = startIndex; i < hooks.length; i += 1) try {
 		const result = task ? task.run(() => hooks[i](...args)) : hooks[i](...args);
-		if (result instanceof Promise) return result.then(() => callHooks(hooks, args, i + 1, task));
+		if (result && typeof result.then === "function") return Promise.resolve(result).then(() => callHooks(hooks, args, i + 1, task));
 	} catch (error) {
 		return Promise.reject(error);
 	}
@@ -61,8 +60,6 @@ function parallelTaskCaller(hooks, args, name) {
 function callEachWith(callbacks, arg0) {
 	for (const callback of [...callbacks]) callback(arg0);
 }
-//#endregion
-//#region src/hookable.ts
 var Hookable = class {
 	_hooks;
 	_before;
@@ -699,7 +696,7 @@ const _routes = [
   {
     name: "dashboard-invoices-create",
     path: "/dashboard/invoices/create",
-    component: () => import('./create-sSqvWr5j.mjs')
+    component: () => import('./create-DhQhJ7KF.mjs')
   },
   {
     name: "dashboard-invoices-id-success",
