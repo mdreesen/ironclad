@@ -7,6 +7,18 @@ const props = defineProps({
     title_small: {
         type: String,
         default: ''
+    },
+    actions: {
+        type: Boolean,
+        default: false
+    },
+    label_action: {
+        type: String,
+        default: ''
+    },
+    path: {
+        type: String,
+        default: ''
     }
 })
 </script>
@@ -21,7 +33,8 @@ const props = defineProps({
             <p class="text-zinc-400 italic-none">Evergreen // Montana</p>
         </div>
         <div class="col-span-1 md:col-span-3 text-left md:text-right">
-            <span class="text-[10px] font-mono border border-black px-2 py-1 inline-block">v.2.0.26</span>
+            <baseLink v-if="actions" :label="label_action" :style="`bg-black text-white`" :path="path" />
+            <span v-else class="text-[10px] font-mono border border-black px-2 py-1 inline-block">v.2.0.26</span>
         </div>
     </header>
 </template>

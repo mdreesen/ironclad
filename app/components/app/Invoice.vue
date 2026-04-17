@@ -48,32 +48,22 @@ const triggerPayment = async () => {
 
 <template>
   <div>
-    
-    <!-- <header class="max-w-300 mx-auto grid grid-cols-12 border-t-12 border-black pt-8 mb-24">
-      <div class="col-span-12 md:col-span-8">
-        <h1 class="text-6xl md:text-8xl font-black uppercase tracking-[-0.05em] leading-[0.85]">NEW<br>INVOICE</h1>
-      </div>
-      <div class="col-span-12 md:col-span-4 text-left md:text-right mt-8 md:mt-0">
-        <span class="text-[10px] font-black tracking-[0.3em] uppercase block mb-4 text-zinc-400">Reference ID</span>
-        <input v-model="invoice.number" class="text-4xl font-black uppercase tracking-tighter w-full md:text-right bg-transparent border-none focus:ring-0 p-0" />
-      </div>
-    </header> -->
 
-    <appHero />
+    <!-- <appHero /> -->
 
     <main class="max-w-300 mx-auto">
       
       <section class="grid grid-cols-1 md:grid-cols-2 border-t border-black mb-24">
         <div class="p-10 border-b md:border-b-0 border-x border-black">
-          <label class="text-[9px] font-black uppercase tracking-[0.3em] text-zinc-400 block mb-6">01 / Recipient</label>
-          <input v-model="invoice.client" placeholder="CLIENT NAME" class="text-2xl font-black uppercase tracking-tighter w-full bg-transparent border-none focus:ring-0 p-0 placeholder:text-zinc-200" />
-          <input v-model="invoice.project" placeholder="PROJECT SITE" class="text-sm font-bold uppercase tracking-widest w-full bg-transparent border-none focus:ring-0 p-0 mt-4 placeholder:text-zinc-300" />
+          <label class="text-[9px] font-black uppercase tracking-[0.3em] block mb-6">01 / Recipient</label>
+          <input v-model="invoice.client" placeholder="CLIENT NAME" class="text-2xl font-black uppercase tracking-tighter w-full bg-transparent border-none focus:ring-0 p-0 placeholder:text-zinc-500" />
+          <input v-model="invoice.project" placeholder="PROJECT SITE" class="text-sm font-bold uppercase tracking-widest w-full bg-transparent border-none focus:ring-0 p-0 mt-4 placeholder:text-zinc-500" />
         </div>
         
         <div class="p-10 border-b md:border-b-0 border-r border-black">
-          <label class="text-[9px] font-black uppercase tracking-[0.3em] text-zinc-400 block mb-6">02 / Logistics</label>
+          <label class="text-[9px] font-black uppercase tracking-[0.3em] block mb-6">02 / Logistics</label>
           <input type="date" v-model="invoice.date" class="text-2xl font-black uppercase tracking-tighter w-full bg-transparent border-none focus:ring-0 p-0" />
-          <p class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest mt-4">Net 30 Terms Apply</p>
+          <p class="text-[9px] font-bold uppercase tracking-widest mt-4">Net 30 Terms Apply</p>
         </div>
       </section>
 
@@ -108,12 +98,12 @@ const triggerPayment = async () => {
       <footer class="mt-24">
         <div class="grid grid-cols-12 border-t-4 border-black pt-8 mb-16">
           <div class="col-span-12 md:col-span-8">
-             <p class="text-[9px] font-bold text-zinc-400 uppercase tracking-[0.4em] max-w-xs leading-relaxed">
+             <p class="text-[9px] font-bold uppercase tracking-[0.4em] max-w-xs leading-relaxed">
                All payments are due within 30 days. Ironclad reserves the right to apply late fees to overdue structural and finishing accounts.
              </p>
           </div>
           <div class="col-span-12 md:col-span-4 text-left md:text-right mt-6 md:mt-0">
-            <span class="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-400">Grand Total (USD)</span>
+            <span class="text-[9px] font-black uppercase tracking-[0.4em]">Grand Total (USD)</span>
             <p class="text-7xl font-black tracking-tighter tabular-nums leading-none mt-4">{{ subtotal.toLocaleString() }}</p>
           </div>
         </div>
@@ -124,18 +114,19 @@ const triggerPayment = async () => {
             01 / Generate PDF 
             <span class="text-lg group-hover:-translate-y-1 transition-transform">↓</span>
           </button>
-          
-          <button @click="emailInvoice" 
-            class="p-8 border-b md:border-b-0 md:border-r border-black font-black uppercase tracking-[0.3em] text-[10px] hover:bg-black hover:text-white transition-colors flex justify-between items-center group">
-            02 / Dispatch Lead
-            <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
-          </button>
 
           <button @click="triggerPayment" 
             class="p-8 font-black uppercase tracking-[0.3em] text-[10px] bg-zinc-50 hover:bg-black hover:text-white transition-all flex justify-between items-center relative group">
-            03 / Instant Remit
+            02 / Instant Remit
             <span class="text-[8px] font-mono border border-black px-2 py-1 group-hover:border-white">STRIPE</span>
           </button>
+
+          <nuxt-link to="/dashboard/invoices" class="p-8 border-b md:border-b-0 md:border-l border-black font-black uppercase tracking-[0.3em] text-[10px] hover:bg-black hover:text-white transition-colors flex justify-between items-center group">
+          <button>
+            03 / Cancel
+            <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
+          </button>
+        </nuxt-link>
         </div>
       </footer>
     </main>

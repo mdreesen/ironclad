@@ -10,12 +10,15 @@ const props = defineProps({
     },
     icon: {
         type: String,
+    },
+    style: {
+        type: String,
     }
 })
 </script>
 
 <template>
     <NuxtLink :to="path">
-        <UButton :icon="icon" size="md" color="neutral" variant="subtle">{{ label }}</UButton>
+        <UButton :icon="icon" :class="`${style}`" size="md" color="neutral" variant="subtle">{{ label }}</UButton>
     </NuxtLink>
 </template>

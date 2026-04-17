@@ -7,10 +7,13 @@ const props = defineProps({
     icon: {
         type: String,
         // i-lucide-rocket
+    },
+    style: {
+        type: String
     }
 })
 </script>
 
 <template>
-    <UButton :icon="icon" size="md" color="neutral" variant="subtle">{{ label }}</UButton>
+    <UButton :class="`${style}`" :icon="icon" size="md" color="neutral" variant="subtle">{{ label }}</UButton>
 </template>

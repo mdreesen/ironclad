@@ -25,7 +25,7 @@ const invoices = ref([
         </NuxtLink>
       </div>
     </header> -->
-    <appHero label="Invoices" />
+    <appHero label="Invoices" actions label_action="+ Create Invoice" path="/dashboard/invoices/create" />
     
 
     <main class="max-w-350 mx-auto">
