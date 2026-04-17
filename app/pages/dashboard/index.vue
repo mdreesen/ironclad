@@ -18,6 +18,14 @@ const statData: Stat[] = [
   { label: '02 / PIPELINE', value: '24', unit: 'LEADS' },
   { label: '03 / MARGIN', value: '38.4', unit: '%' }
 ];
+
+const paidInvoices = [
+  {id: 1234, invoice_id: 1234534, company: 'Flathead Valley Site', date: '01/02/2026', amount: '4,200'},
+  {id: 1233, invoice_id: 1234534, company: 'Flathead Valley Site', date: '01/02/2026', amount: '84,200'},
+  {id: 1232, invoice_id: 1234534, company: 'Flathead Valley Site', date: '01/02/2026', amount: '1,200'},
+  {id: 1231, invoice_id: 1234534, company: 'Flathead Valley Site', date: '01/02/2026', amount: '200'}
+
+]
 </script>
 
 <template>
@@ -25,7 +33,7 @@ const statData: Stat[] = [
 
     <appHero label="Welcome<br>name" />
 
-    <main class="max-w-350 mx-auto">
+    <main class="max-w-350 mx-auto flex flex-col gap-16">
 
       <section>
         <baseStats :data="statData" />
@@ -36,7 +44,7 @@ const statData: Stat[] = [
       </section>
 
       <section>
-        <baseLogs />
+        <baseLogs :data="paidInvoices" />
       </section>
 
     </main>
