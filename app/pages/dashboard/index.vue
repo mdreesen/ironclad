@@ -23,7 +23,7 @@ const statData: Stat[] = [
 <template>
   <div>
 
-    <appHero />
+    <appHero label="Welcome<br>name" />
 
     <main class="max-w-350 mx-auto">
 

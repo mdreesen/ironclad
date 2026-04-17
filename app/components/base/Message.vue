@@ -22,7 +22,7 @@ const props = defineProps({
 
 <template>
     <a :href="`${message_type}:${phone_number}`">
-        <UButton :icon="icon" size="md" color="neutral" variant="subtle" class="w-30 justify-center">{{ label }}</UButton>
+        <UButton :icon="icon" size="md" color="neutral" variant="subtle" class="p-6 font-black uppercase tracking-[0.2em] text-[9px] hover:bg-black hover:text-white transition-all flex items-center justify-center gap-2">{{ label }}</UButton>
     </a>
 
 </template>

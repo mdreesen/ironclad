@@ -16,8 +16,8 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 interface _GlobalComponents {
   AppHero: typeof import("../../app/components/app/Hero.vue")['default']
   AppInvoice: typeof import("../../app/components/app/Invoice.vue")['default']
-  AppScheduler: typeof import("../../app/components/app/Scheduler.vue")['default']
   BaseButton: typeof import("../../app/components/base/Button.vue")['default']
+  BaseCalendar: typeof import("../../app/components/base/Calendar.vue")['default']
   BaseCard: typeof import("../../app/components/base/Card.vue")['default']
   BaseCardFinances: typeof import("../../app/components/base/CardFinances.vue")['default']
   BaseCardTeam: typeof import("../../app/components/base/CardTeam.vue")['default']
@@ -206,8 +206,8 @@ interface _GlobalComponents {
   NuxtIsland: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
   LazyAppHero: LazyComponent<typeof import("../../app/components/app/Hero.vue")['default']>
   LazyAppInvoice: LazyComponent<typeof import("../../app/components/app/Invoice.vue")['default']>
-  LazyAppScheduler: LazyComponent<typeof import("../../app/components/app/Scheduler.vue")['default']>
   LazyBaseButton: LazyComponent<typeof import("../../app/components/base/Button.vue")['default']>
+  LazyBaseCalendar: LazyComponent<typeof import("../../app/components/base/Calendar.vue")['default']>
   LazyBaseCard: LazyComponent<typeof import("../../app/components/base/Card.vue")['default']>
   LazyBaseCardFinances: LazyComponent<typeof import("../../app/components/base/CardFinances.vue")['default']>
   LazyBaseCardTeam: LazyComponent<typeof import("../../app/components/base/CardTeam.vue")['default']>

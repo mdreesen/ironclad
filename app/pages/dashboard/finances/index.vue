@@ -7,7 +7,7 @@ definePageMeta({
  * DESIGN: SWISS ARCHITECTURAL GRID
  */
 
-const financialMetrics = [
+const statData = [
   { label: '01 / ANNUAL VOLUME', value: '1,332,400', unit: 'USD' },
   { label: '02 / OUTSTANDING', value: '42,850', unit: 'USD' },
   { label: '03 / NET MARGIN', value: '34.2', unit: '%' }
@@ -20,19 +20,12 @@ const flowData = [20, 45, 30, 80, 65, 90, 100];
 <template>
   <div>
 
-    <appHero />
+    <appHero label="Finances" />
 
-    <main class="max-w-[1400px] mx-auto">
+    <main class="max-w-350 mx-auto">
       
-      <section class="grid grid-cols-1 md:grid-cols-12 border-b border-black mb-12">
-        <div v-for="(stat, i) in financialMetrics" :key="i" 
-          class="col-span-4 border-t md:border-t-0 border-l border-black md:last:border-r p-8 hover:bg-black hover:text-white transition-colors duration-500 group">
-          <span class="text-[9px] font-black tracking-[0.2em] uppercase block mb-12 text-zinc-500 group-hover:text-zinc-400">{{ stat.label }}</span>
-          <div class="flex items-baseline gap-2">
-            <span class="text-5xl md:text-6xl font-black tracking-tighter tabular-nums">{{ stat.value }}</span>
-            <span class="text-[10px] font-bold uppercase">{{ stat.unit }}</span>
-          </div>
-        </div>
+      <section>
+        <baseStats :data="statData" />
       </section>
 
       <section class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b border-black mb-24">

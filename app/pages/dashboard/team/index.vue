@@ -1,100 +1,82 @@
 <script setup lang="ts">
 definePageMeta({
-    layout: 'authenticated',
+  layout: 'authenticated',
 });
-const team = ref([
-  { 
-    id: 1, 
-    name: 'Marcus Thorne', 
-    role: 'Lead Estimator', 
-    specialty: 'Foundations & Steel',
-    workload: 85, 
-    status: 'On Site',
-    email: 'marcus@hahnbuilt.com'
-  },
-  { 
-    id: 2, 
-    name: 'Elena Rodriguez', 
-    role: 'Project Manager', 
-    specialty: 'High-End Finishes',
-    workload: 40, 
-    status: 'Remote',
-    email: 'elena@alexanderhomes.com'
-  },
-  { 
-    id: 3, 
-    name: 'Silas Vane', 
-    role: 'Site Supervisor', 
-    specialty: 'Logistics',
-    workload: 95, 
-    status: 'Busy',
-    email: 'silas@ironclad.io'
-  }
+/**
+ * IRONCLAD WORKFORCE HUB
+ * DESIGN: DANISH/SWISS STRUCTURALISM
+ */
+
+const teams = ref([
+      { id: 'T01', name: 'THORNE', role: 'Lead Carpenter', phone: '4065550101', email: 'thorne@ironclad.com', status: 'ON-SITE', site: 'Whitefish' },
+      { id: 'V02', name: 'VANE', role: 'Slab Foreman', phone: '4065550102', email: 'vane@ironclad.com', status: 'LOGISTICS', site: 'Kalispell' },
+      { id: '3', name: 'Greg', role: 'Slab Foreman', phone: '4065550102', email: 'vane@ironclad.com', status: 'LOGISTICS', site: 'Kalispell' },
+      { id: '4', name: 'Brian', role: 'Slab Foreman', phone: '4065550102', email: 'vane@ironclad.com', status: 'LOGISTICS', site: 'Kalispell' },
+      { id: '5', name: 'Bill', role: 'Slab Foreman', phone: '4065550102', email: 'vane@ironclad.com', status: 'LOGISTICS', site: 'Kalispell' },
+      { id: '6', name: 'Jan', role: 'Slab Foreman', phone: '4065550102', email: 'vane@ironclad.com', status: 'LOGISTICS', site: 'Kalispell' },
+      { id: '7', name: 'Frank', role: 'Slab Foreman', phone: '4065550102', email: 'vane@ironclad.com', status: 'LOGISTICS', site: 'Kalispell' },
+
 ]);
+
+// Mechanical Dispatch Logic
+const dispatchSMS = (phone: string) => window.open(`sms:${phone}`);
+const dispatchEmail = (email: string) => window.open(`mailto:${email}`);
 </script>
 
 <template>
   <div>
-    <div class="max-w-7xl mx-auto">
-      
-      <header class="flex justify-between items-end mb-16">
-        <div>
-          <span class="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 block mb-2">Personnel Directory</span>
-          <baseHeader label="Team" />
-
-        </div>
-        <baseButton label="+ Add Member" />
-      </header>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-        <div v-for="member in team" :key="member.id" class="bg-gray-700/50">
-          <baseCardTeam :label="member.name" :description="member.role" :status="member.status" />
-          
-          <!-- <div class="flex justify-between items-start mb-6">
-            <div class="w-16 h-16 bg-zinc-100 rounded-sm border border-zinc-200 overflow-hidden grayscale group-hover:grayscale-0 transition-all">
-              <div class="w-full h-full flex items-center justify-center text-zinc-300 font-black italic text-xl">
-                {{ member.name.charAt(0) }}
-              </div>
-            </div>
-            <span :class="getStatusColor(member.status)" class="px-2 py-1 text-[9px] font-black uppercase tracking-widest rounded-sm">
-              {{ member.status }}
-            </span>
-          </div> -->
-
-          <!-- <div class="mb-8">
-            <h2 class="text-2xl font-black uppercase italic tracking-tighter text-zinc-950 leading-none">
-              {{ member.name }}
-            </h2>
-            <p class="text-[10px] font-bold text-orange-600 uppercase tracking-widest mt-2">
-              {{ member.role }}
-            </p>
-            <p class="text-xs text-zinc-500 mt-1 italic">{{ member.specialty }}</p>
-          </div> -->
-
-          <!-- <div class="mb-8">
-            <div class="flex justify-between items-end mb-2">
-              <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Active Workload</span>
-              <span class="text-xs font-mono font-bold">{{ member.workload }}%</span>
-            </div>
-            <div class="h-1 w-full bg-zinc-100 rounded-full overflow-hidden">
-              <div 
-                class="h-full bg-zinc-950 transition-all duration-1000" 
-                :style="{ width: member.workload + '%' }"
-                :class="member.workload > 90 ? 'bg-rose-600' : 'bg-zinc-950'"
-              ></div>
-            </div>
-          </div> -->
-
-          <!-- <div class="flex gap-4 border-t border-zinc-100 pt-6">
-            <button class="flex-1 text-[10px] font-black uppercase tracking-widest py-3 border border-zinc-200 hover:bg-zinc-950 hover:text-white transition-all">
-              Profile
-            </button>
-            <button class="flex-1 text-[10px] font-black uppercase tracking-widest py-3 border border-zinc-200 hover:bg-zinc-950 hover:text-white transition-all">
-              Message
-            </button>
-          </div> -->
-        </div>
+    
+    <!-- <header class="max-w-[1400px] mx-auto grid grid-cols-12 border-t-[12px] border-black pt-8 mb-24">
+      <div class="col-span-12 md:col-span-8">
+        <h1 class="text-6xl md:text-8xl font-black uppercase tracking-[-0.05em] leading-[0.85]">FORCE<br>LOGISTICS</h1>
       </div>
-    </div>
+      <div class="col-span-12 md:col-span-4 text-left md:text-right mt-8 md:mt-0 flex flex-col md:justify-end">
+        <span class="text-[10px] font-black tracking-[0.3em] uppercase block mb-4 text-zinc-400 italic-none">Active Personnel</span>
+        <p class="text-4xl font-black tracking-tighter tabular-nums">04 <span class="text-zinc-200">/ UNITS</span></p>
+      </div>
+    </header> -->
+
+    <appHero label="Team" />
+
+    <main class="max-w-350 mx-auto flex flex-wrap gap-10">
+      
+      <div v-for="item in teams" :key="item.name">
+            <baseCardTeam :label="item.name" :role="item.role" :phone_number="item.phone" :email="item.email" />
+            <!-- <div class="p-10 flex-1">
+              <div class="flex justify-between items-start mb-12">
+                <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-widest italic-none">{{ member.role }}</span>
+                <div class="w-2 h-2 rounded-none" 
+                     :class="member.status === 'ON-SITE' ? 'bg-black animate-pulse' : 'bg-zinc-200'"></div>
+              </div>
+              
+              <h3 class="text-5xl font-black uppercase tracking-tighter mb-4">{{ member.name }}</h3>
+              <p class="text-[10px] font-mono text-zinc-500 uppercase tracking-tighter">
+                Sector: {{ member.site }} // ID: {{ member.id }}
+              </p>
+            </div>
+
+            <div class="grid grid-cols-2 border-t border-black bg-zinc-50 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out no-print">
+              <button @click="dispatchSMS(member.phone)" 
+                class="p-6 border-r border-black font-black uppercase tracking-[0.2em] text-[9px] hover:bg-black hover:text-white transition-all flex items-center justify-center gap-2">
+                <span>SMS DISPATCH</span>
+              </button>
+              <button @click="dispatchEmail(member.email)" 
+                class="p-6 font-black uppercase tracking-[0.2em] text-[9px] hover:bg-black hover:text-white transition-all flex items-center justify-center gap-2">
+                <span>EMAIL LOG</span>
+              </button>
+            </div>
+
+            <div class="absolute bottom-4 right-4 text-xs font-light group-hover:opacity-0 transition-opacity">
+              COMMAND [+]
+            </div> -->
+
+      </div>
+
+    </main>
   </div>
 </template>
+
+<style scoped>
+.grid { margin-left: -1px; }
+.tabular-nums { font-variant-numeric: tabular-nums; }
+</style>

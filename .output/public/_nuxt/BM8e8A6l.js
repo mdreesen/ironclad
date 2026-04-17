@@ -1,1 +1,0 @@
-import{d as t,o as n,c as a}from"./YAQMBifC.js";const r=["innerHTML"],c=t({__name:"Header",props:{label:{type:String,required:!0}},setup(e){return(o,s)=>(n(),a("h1",{class:"text-5xl font-black uppercase italic tracking-tighter",innerHTML:e.label},null,8,r))}}),i=Object.assign(c,{__name:"BaseHeader"});export{i as _};

@@ -4,7 +4,7 @@ const props = defineProps({
         type: String,
         required: true
     },
-    description: {
+    role: {
         type: String,
         default: ''
     },
@@ -12,11 +12,11 @@ const props = defineProps({
         type: String,
         default: ''
     },
-    message: {
+    phone_number: {
         type: String,
         default: ''
     },
-    phone_number: {
+    email: {
         type: String,
         default: ''
     }
@@ -24,21 +24,17 @@ const props = defineProps({
 </script>
 
 <template>
-    <UCard class="bg-gray-700/50 divide-none">
-        <template #header>
-            <spn class="text-xl">{{ label }}</spn>
-        </template>
-
-        <div>
-            <div>{{ description }}</div>
-            <!-- <span class="text-sm italic text-blue-500 bg-blue-700/50 p-2 rounded">{{ status }}</span> -->
-        </div>
-
-        <template #footer>
-            <div class="flex justify-around">
-                <baseMessage icon="lucide:smartphone" label="Call" message_type="tel" :phone_number="phone_number" />
-                <baseMessage icon="lucide:message-circle" label="message" message_type="sms" :phone_number="phone_number" />
-            </div>
-        </template>
-    </UCard>
+  <UPageCard
+    :title="label"
+    :description="role"
+    orientation="vertical"
+    spotlight
+    spotlight-color="primary"
+  >
+     <div class="flex gap-4">
+        <baseMessage label="Text" message_type="sms" :phone_number="phone_number" />
+        <baseMessage label="Call" message_type="tel" :phone_number="phone_number" />
+        <baseMessage label="Email" message_type="mailto" :phone_number="email" />
+     </div>
+  </UPageCard>
 </template>

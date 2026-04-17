@@ -5,5 +5,6 @@ definePageMeta({
 </script>
 
 <template>
-    <appScheduler />
+    <appHero label="Calendar" />
+    <baseCalendar />
 </template>
