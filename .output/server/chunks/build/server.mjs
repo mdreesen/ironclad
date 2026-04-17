@@ -719,13 +719,13 @@ const _routes = [
     name: "dashboard-schedule",
     path: "/dashboard/schedule",
     meta: __nuxt_page_meta$3 || {},
-    component: () => import('./index-m9KcJfqg.mjs')
+    component: () => import('./index-DnGijuVq.mjs')
   },
   {
     name: "dashboard-team",
     path: "/dashboard/team",
     meta: __nuxt_page_meta$2 || {},
-    component: () => import('./index-BM9bmQjE.mjs')
+    component: () => import('./index-DOmFRJpB.mjs')
   },
   {
     name: "dashboard",

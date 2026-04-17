@@ -20,6 +20,7 @@ interface _GlobalComponents {
   BaseCalendar: typeof import("../../app/components/base/Calendar.vue")['default']
   BaseCard: typeof import("../../app/components/base/Card.vue")['default']
   BaseCardFinances: typeof import("../../app/components/base/CardFinances.vue")['default']
+  BaseCardSchedule: typeof import("../../app/components/base/CardSchedule.vue")['default']
   BaseCardTeam: typeof import("../../app/components/base/CardTeam.vue")['default']
   BaseChartBar: typeof import("../../app/components/base/ChartBar.vue")['default']
   BaseChartDonut: typeof import("../../app/components/base/ChartDonut.vue")['default']
@@ -210,6 +211,7 @@ interface _GlobalComponents {
   LazyBaseCalendar: LazyComponent<typeof import("../../app/components/base/Calendar.vue")['default']>
   LazyBaseCard: LazyComponent<typeof import("../../app/components/base/Card.vue")['default']>
   LazyBaseCardFinances: LazyComponent<typeof import("../../app/components/base/CardFinances.vue")['default']>
+  LazyBaseCardSchedule: LazyComponent<typeof import("../../app/components/base/CardSchedule.vue")['default']>
   LazyBaseCardTeam: LazyComponent<typeof import("../../app/components/base/CardTeam.vue")['default']>
   LazyBaseChartBar: LazyComponent<typeof import("../../app/components/base/ChartBar.vue")['default']>
   LazyBaseChartDonut: LazyComponent<typeof import("../../app/components/base/ChartDonut.vue")['default']>

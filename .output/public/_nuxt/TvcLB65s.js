@@ -1,0 +1,1 @@
+import{d as o,V as a,L as s,c as n,A as r,o as l}from"./j96lud97.js";const p=o({__name:"default",setup(c){const e=a();return s({meta:[{property:"og:title",content:`Ascend - ${e.meta.title}`}]}),(t,u)=>(l(),n("div",null,[r(t.$slots,"default")]))}});export{p as default};
