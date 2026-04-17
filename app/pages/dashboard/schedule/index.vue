@@ -6,5 +6,7 @@ definePageMeta({
 
 <template>
     <appHero label="Calendar" />
-    <baseCalendar />
+    <section>
+        <baseCalendar />
+    </section>
 </template>
